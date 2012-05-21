@@ -71,9 +71,11 @@ public class UAgentInfo {
 	public static final String deviceBB = "blackberry";
 	public static final String vndRIM = "vnd.rim"; //Detectable when BB devices emulate IE or Firefox
 	public static final String deviceBBStorm = "blackberry95";  //Storm 1 and 2
-	public static final String deviceBBBold = "blackberry97";  //Bold
+	public static final String deviceBBBold = "blackberry97";  //Bold 97x0 (non-touch)
+	public static final String deviceBBBoldTouch = "blackberry 99";  //Bold 99x0 (touchscreen)
 	public static final String deviceBBTour = "blackberry96";  //Tour
 	public static final String deviceBBCurve = "blackberry89";  //Curve 2
+	public static final String deviceBBCurveTouch = "blackberry 938";  //Curve Touch 9380
 	public static final String deviceBBTorch = "blackberry 98";  //Torch
 	public static final String deviceBBPlaybook = "playbook"; //PlayBook tablet
 
@@ -84,7 +86,8 @@ public class UAgentInfo {
 	public static final String engineBlazer = "blazer"; //Old Palm
 	public static final String engineXiino = "xiino"; //Another old Palm
 
-	public static final String deviceKindle = "kindle";  //Amazon Kindle, eInk one.
+	public static final String deviceKindle = "kindle";  //Amazon Kindle, eInk one
+	public static final String engineSilk = "silk";  //Amazon's accelerated Silk browser for Kindle Fire
 
 	public static final String deviceNuvifone = "nuvifone";  //Garmin Nuvifone
 
@@ -494,13 +497,15 @@ public class UAgentInfo {
 
 	/**
 	 * Detects if the current browser is a BlackBerry Touch
-	 * device, such as the Storm or Torch. Excludes the Playbook.
+	 * device, such as the Storm, Torch, and Bold Touch. Excludes the Playbook.
 	 * @return detection of a Blackberry touchscreen device
 	 */
 	public boolean detectBlackBerryTouch() {
 		if (detectBlackBerry() &&
 				(userAgent.indexOf(deviceBBStorm) != -1 ||
-				userAgent.indexOf(deviceBBTorch) != -1)) {
+			userAgent.indexOf(deviceBBTorch) != -1 ||
+			userAgent.indexOf(deviceBBBoldTouch) != -1 ||
+						userAgent.indexOf(deviceBBCurveTouch) != -1 )) {
 			return true;
 		}
 		return false;
@@ -510,11 +515,11 @@ public class UAgentInfo {
 	 * Detects if the current browser is a BlackBerry device AND
 	 *   has a more capable recent browser. Excludes the Playbook.
 	 *   Examples, Storm, Bold, Tour, Curve2
-	 *   Excludes the new BlackBerry OS 6 browser!!
+	 *   Excludes the new BlackBerry OS 6 and 7 browser!!
 	 * @return detection of a Blackberry device with a better browser
 	 */
 	public boolean detectBlackBerryHigh() {
-		//Disambiguate for BlackBerry OS 6 (WebKit) browser
+		//Disambiguate for BlackBerry OS 6 or 7 (WebKit) browser
 		if (detectBlackBerryWebKit()) 
 			return false;
 		if (detectBlackBerry()) {
@@ -700,11 +705,25 @@ public class UAgentInfo {
 	}
 
 	/**
-	 * Detects if the current device is an Amazon Kindle.
+	 * Detects if the current device is an Amazon Kindle (eInk devices only).
+	 * Note: For the Kindle Fire, use the normal Android methods.
 	 * @return detection of a Kindle
 	 */
 	public boolean detectKindle() {
-		if (userAgent.indexOf(deviceKindle)!= -1) {
+		if (userAgent.indexOf(deviceKindle)!= -1 &&
+			!detectAndroid()) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Detects if the current Amazon device is using the Silk Browser.
+	 * Note: Typically used by the the Kindle Fire.
+	 * @return detection of an Amazon Kindle Fire in Silk mode.
+	 */
+	public boolean detectAmazonSilk() {
+		if (userAgent.indexOf(engineSilk)  != -1) {
 			return true;
 		}
 		return false;
@@ -751,6 +770,12 @@ public class UAgentInfo {
 			return true;
 				}
 		if (userAgent.indexOf(mobile) != -1) {
+			return true;
+		}
+
+		//We also look for Kindle devices
+		if (detectKindle()
+						|| detectAmazonSilk()) {
 			return true;
 		}
 
@@ -925,14 +950,15 @@ public class UAgentInfo {
 	 * The quick way to detect for a tier of devices.
 	 *   This method detects for devices which can
 	 *   display iPhone-optimized web content.
-	 *   Includes iPhone, iPod Touch, Android, Palm WebOS, etc.
-	 * @return detection of any device in the iPhone/Android/WebOS Tier
+	 *   Includes iPhone, iPod Touch, Android, Windows Phone 7, Palm WebOS, etc.
+	 * @return detection of any device in the iPhone/Android/WP7/WebOS Tier
 	 */
 	public boolean detectTierIphone() {
 		if (isIphone
 				|| isAndroidPhone
 				|| (detectBlackBerryWebKit() 
 						&& detectBlackBerryTouch())
+		|| detectWindowsPhone7()
 						|| detectPalmWebOS()
 						|| detectGarminNuvifone()) {
 			return true;
@@ -954,15 +980,15 @@ public class UAgentInfo {
 		//Note: 'High' BlackBerry devices ONLY
 		if (detectMobileQuick()) {
 
-			if (!detectTierIphone()) {
+						//Exclude iPhone Tier and e-Ink Kindle devices.
+			if (!detectTierIphone() && !detectKindle()) {
 
 				//The following devices are explicitly ok.
 				//Note: 'High' BlackBerry devices ONLY
-				//WP7's IE-7-based browser isn't good enough for iPhone Tier.
+				//Older Windows 'Mobile' isn't good enough for iPhone Tier.
 				if (detectWebkit()
 						|| detectS60OssBrowser()
 						|| detectBlackBerryHigh()
-						|| detectWindowsPhone7()
 						|| detectWindowsMobile()
 						|| userAgent.indexOf(engineTelecaQ) !=
 						-1) {
