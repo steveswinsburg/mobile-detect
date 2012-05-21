@@ -77,7 +77,7 @@
 			<plugin>
                 <groupId>com.mycila.maven-license-plugin</groupId>
                 <artifactId>maven-license-plugin</artifactId>
-                <version>1.8.0</version>
+                <version>1.9.0</version>
                 <configuration>
                     <basedir>${basedir}</basedir>
                     <header>docs/apache-license-2-template.txt</header>
@@ -118,6 +118,7 @@
             <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.4</version>
 				<configuration>
 					<compilerVersion>1.6</compilerVersion>
 					<source>1.6</source>
@@ -129,7 +130,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.2.1</version>
+				<version>2.3</version>
 				<configuration>
 					<mavenExecutorId>forked-path</mavenExecutorId>
 				</configuration>
@@ -153,7 +154,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.1</version>
+						<version>1.4</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>
