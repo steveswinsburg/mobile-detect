@@ -34,110 +34,110 @@ public class UAgentInfo {
 	private String httpAccept = "";
 
 	// Let's store values for quickly accessing the same info multiple times.
-	public boolean isIphone = false;
-	public boolean isAndroidPhone = false;
-	public boolean isTierTablet = false;
-	public boolean isTierIphone = false;
-	public boolean isTierRichCss = false;
-	public boolean isTierGenericMobile = false;
+	private boolean isIphone = false;
+	private boolean isAndroidPhone = false;
+	private boolean isTierTablet = false;
+	private boolean isTierIphone = false;
+	private boolean isTierRichCss = false;
+	private boolean isTierGenericMobile = false;
 
 	// Initialize some initial smartphone string variables.
-	public static final String engineWebKit = "webkit";
+	private static final String engineWebKit = "webkit";
 
-	public static final String deviceIphone = "iphone";
-	public static final String deviceIpod = "ipod";
-	public static final String deviceIpad = "ipad";
-	public static final String deviceMacPpc = "macintosh"; //Used for disambiguation
+	private static final String deviceIphone = "iphone";
+	private static final String deviceIpod = "ipod";
+	private static final String deviceIpad = "ipad";
+	private static final String deviceMacPpc = "macintosh"; //Used for disambiguation
 
-	public static final String deviceAndroid = "android";
-	public static final String deviceGoogleTV = "googletv";
-	public static final String deviceXoom = "xoom"; //Motorola Xoom
-	public static final String deviceHtcFlyer = "htc_flyer"; //HTC Flyer
+	private static final String deviceAndroid = "android";
+	private static final String deviceGoogleTV = "googletv";
+	private static final String deviceXoom = "xoom"; //Motorola Xoom
+	private static final String deviceHtcFlyer = "htc_flyer"; //HTC Flyer
 
-	public static final String deviceSymbian = "symbian";
-	public static final String deviceS60 = "series60";
-	public static final String deviceS70 = "series70";
-	public static final String deviceS80 = "series80";
-	public static final String deviceS90 = "series90";
+	private static final String deviceSymbian = "symbian";
+	private static final String deviceS60 = "series60";
+	private static final String deviceS70 = "series70";
+	private static final String deviceS80 = "series80";
+	private static final String deviceS90 = "series90";
 
-	public static final String deviceWinPhone7 = "windows phone os 7";
-	public static final String deviceWinMob = "windows ce";
-	public static final String deviceWindows = "windows";
-	public static final String deviceIeMob = "iemobile";
-	public static final String devicePpc = "ppc"; //Stands for PocketPC
-	public static final String enginePie = "wm5 pie"; //An old Windows Mobile
+	private static final String deviceWinPhone7 = "windows phone os 7";
+	private static final String deviceWinMob = "windows ce";
+	private static final String deviceWindows = "windows";
+	private static final String deviceIeMob = "iemobile";
+	private static final String devicePpc = "ppc"; //Stands for PocketPC
+	private static final String enginePie = "wm5 pie"; //An old Windows Mobile
 
-	public static final String deviceBB = "blackberry";
-	public static final String vndRIM = "vnd.rim"; //Detectable when BB devices emulate IE or Firefox
-	public static final String deviceBBStorm = "blackberry95";  //Storm 1 and 2
-	public static final String deviceBBBold = "blackberry97";  //Bold 97x0 (non-touch)
-	public static final String deviceBBBoldTouch = "blackberry 99";  //Bold 99x0 (touchscreen)
-	public static final String deviceBBTour = "blackberry96";  //Tour
-	public static final String deviceBBCurve = "blackberry89";  //Curve 2
-	public static final String deviceBBCurveTouch = "blackberry 938";  //Curve Touch 9380
-	public static final String deviceBBTorch = "blackberry 98";  //Torch
-	public static final String deviceBBPlaybook = "playbook"; //PlayBook tablet
+	private static final String deviceBB = "blackberry";
+	private static final String vndRIM = "vnd.rim"; //Detectable when BB devices emulate IE or Firefox
+	private static final String deviceBBStorm = "blackberry95";  //Storm 1 and 2
+	private static final String deviceBBBold = "blackberry97";  //Bold 97x0 (non-touch)
+	private static final String deviceBBBoldTouch = "blackberry 99";  //Bold 99x0 (touchscreen)
+	private static final String deviceBBTour = "blackberry96";  //Tour
+	private static final String deviceBBCurve = "blackberry89";  //Curve 2
+	private static final String deviceBBCurveTouch = "blackberry 938";  //Curve Touch 9380
+	private static final String deviceBBTorch = "blackberry 98";  //Torch
+	private static final String deviceBBPlaybook = "playbook"; //PlayBook tablet
 
-	public static final String devicePalm = "palm";
-	public static final String deviceWebOS = "webos"; //For Palm's line of WebOS devices
-	public static final String deviceWebOShp = "hpwos"; //For HP's line of WebOS devices
+	private static final String devicePalm = "palm";
+	private static final String deviceWebOS = "webos"; //For Palm's line of WebOS devices
+	private static final String deviceWebOShp = "hpwos"; //For HP's line of WebOS devices
 
-	public static final String engineBlazer = "blazer"; //Old Palm
-	public static final String engineXiino = "xiino"; //Another old Palm
+	private static final String engineBlazer = "blazer"; //Old Palm
+	private static final String engineXiino = "xiino"; //Another old Palm
 
-	public static final String deviceKindle = "kindle";  //Amazon Kindle, eInk one
-	public static final String engineSilk = "silk";  //Amazon's accelerated Silk browser for Kindle Fire
+	private static final String deviceKindle = "kindle";  //Amazon Kindle, eInk one
+	private static final String engineSilk = "silk";  //Amazon's accelerated Silk browser for Kindle Fire
 
-	public static final String deviceNuvifone = "nuvifone";  //Garmin Nuvifone
+	private static final String deviceNuvifone = "nuvifone";  //Garmin Nuvifone
 
 	//Initialize variables for mobile-specific content.
-	public static final String vndwap = "vnd.wap";
-	public static final String wml = "wml";
+	private static final String vndwap = "vnd.wap";
+	private static final String wml = "wml";
 
 	//Initialize variables for other random devices and mobile browsers.
-	public static final String deviceTablet = "tablet"; //Generic term for slate and tablet devices
-	public static final String deviceBrew = "brew";
-	public static final String deviceDanger = "danger";
-	public static final String deviceHiptop = "hiptop";
-	public static final String devicePlaystation = "playstation";
-	public static final String deviceNintendoDs = "nitro";
-	public static final String deviceNintendo = "nintendo";
-	public static final String deviceWii = "wii";
-	public static final String deviceXbox = "xbox";
-	public static final String deviceArchos = "archos";
+	private static final String deviceTablet = "tablet"; //Generic term for slate and tablet devices
+	private static final String deviceBrew = "brew";
+	private static final String deviceDanger = "danger";
+	private static final String deviceHiptop = "hiptop";
+	private static final String devicePlaystation = "playstation";
+	private static final String deviceNintendoDs = "nitro";
+	private static final String deviceNintendo = "nintendo";
+	private static final String deviceWii = "wii";
+	private static final String deviceXbox = "xbox";
+	private static final String deviceArchos = "archos";
 
-	public static final String engineOpera = "opera"; //Popular browser
-	public static final String engineNetfront = "netfront"; //Common embedded OS browser
-	public static final String engineUpBrowser = "up.browser"; //common on some phones
-	public static final String engineOpenWeb = "openweb"; //Transcoding by OpenWave server
-	public static final String deviceMidp = "midp"; //a mobile Java technology
-	public static final String uplink = "up.link";
-	public static final String engineTelecaQ = "teleca q"; //a modern feature phone browser
-	public static final String devicePda = "pda"; //some devices report themselves as PDAs
-	public static final String mini = "mini";  //Some mobile browsers put "mini" in their names.
-	public static final String mobile = "mobile"; //Some mobile browsers put "mobile" in their user agent strings.
-	public static final String mobi = "mobi"; //Some mobile browsers put "mobi" in their user agent strings.
+	private static final String engineOpera = "opera"; //Popular browser
+	private static final String engineNetfront = "netfront"; //Common embedded OS browser
+	private static final String engineUpBrowser = "up.browser"; //common on some phones
+	private static final String engineOpenWeb = "openweb"; //Transcoding by OpenWave server
+	private static final String deviceMidp = "midp"; //a mobile Java technology
+	private static final String uplink = "up.link";
+	private static final String engineTelecaQ = "teleca q"; //a modern feature phone browser
+	private static final String devicePda = "pda"; //some devices report themselves as PDAs
+	private static final String mini = "mini";  //Some mobile browsers put "mini" in their names.
+	private static final String mobile = "mobile"; //Some mobile browsers put "mobile" in their user agent strings.
+	private static final String mobi = "mobi"; //Some mobile browsers put "mobi" in their user agent strings.
 
 	//Use Maemo, Tablet, and Linux to test for Nokia"s Internet Tablets.
-	public static final String maemo = "maemo";
-	public static final String linux = "linux";
-	public static final String qtembedded = "qt embedded"; //for Sony Mylo
-	public static final String mylocom2 = "com2"; //for Sony Mylo also
+	private static final String maemo = "maemo";
+	private static final String linux = "linux";
+	private static final String qtembedded = "qt embedded"; //for Sony Mylo
+	private static final String mylocom2 = "com2"; //for Sony Mylo also
 
 	//In some UserAgents, the only clue is the manufacturer.
-	public static final String manuSonyEricsson = "sonyericsson";
-	public static final String manuericsson = "ericsson";
-	public static final String manuSamsung1 = "sec-sgh";
-	public static final String manuSony = "sony";
-	public static final String manuHtc = "htc"; //Popular Android and WinMo manufacturer
+	private static final String manuSonyEricsson = "sonyericsson";
+	private static final String manuericsson = "ericsson";
+	private static final String manuSamsung1 = "sec-sgh";
+	private static final String manuSony = "sony";
+	private static final String manuHtc = "htc"; //Popular Android and WinMo manufacturer
 
 	//In some UserAgents, the only clue is the operator.
-	public static final String svcDocomo = "docomo";
-	public static final String svcKddi = "kddi";
-	public static final String svcVodafone = "vodafone";
+	private static final String svcDocomo = "docomo";
+	private static final String svcKddi = "kddi";
+	private static final String svcVodafone = "vodafone";
 
 	//Disambiguation strings.
-	public static final String disUpdate = "update"; //pda vs. update
+	private static final String disUpdate = "update"; //pda vs. update
 
 
 	/**
@@ -156,22 +156,6 @@ public class UAgentInfo {
 
 		//Intialize key stored values.
 		initDeviceScan();
-	}
-
-	/**
-	 * Return the lower case HTTP_USER_AGENT
-	 * @return userAgent
-	 */
-	public String getUserAgent() {
-		return userAgent;
-	}
-
-	/**
-	 * Return the lower case HTTP_ACCEPT
-	 * @return httpAccept
-	 */
-	public String getHttpAccept() {
-		return httpAccept;
 	}
 
 	/**
