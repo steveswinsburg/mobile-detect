@@ -12,7 +12,7 @@
 	<name>mobile-detect</name>
 	<groupId>au.com.flyingkite</groupId>
 	<artifactId>mobiledetect</artifactId>
-	<version>1.1.1-SNAPSHOT</version>
+	<version>1.1.1</version>
 	<packaging>jar</packaging>
 	
 	<description>A lightweight Java library for detecting mobile devices.</description>
@@ -61,7 +61,7 @@
     	<connection>scm:git:git@github.com:steveswinsburg/mobile-detect.git</connection>
     	<developerConnection>scm:git:git@github.com:steveswinsburg/mobile-detect.git</developerConnection>
     	<url>scm:git:git@github.com:steveswinsburg/mobile-detect.git</url>
-  	  <tag>HEAD</tag>
+  	  <tag>mobiledetect-1.1.1</tag>
   </scm>
   	
   	<prerequisites>
