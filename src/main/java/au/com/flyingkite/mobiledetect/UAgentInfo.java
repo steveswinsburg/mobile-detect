@@ -653,25 +653,6 @@ public class UAgentInfo {
 	}
 
 	/**
-	 * Check to see whether the device is any device
-	 *   in the 'smartphone' category.
-	 * @return detection of a general smartphone device
-	 */
-	public boolean detectSmartphone() {
-		return (isIphone 
-				|| isAndroidPhone
-				|| isTierIphone 
-				|| detectS60OssBrowser()
-				|| detectSymbianOS()
-				|| detectWindowsMobile()
-				|| detectWindowsPhone7()
-				|| detectBlackBerry()
-				|| detectPalmWebOS()
-				|| detectPalmOS()
-				|| detectGarminNuvifone());
-	}
-
-	/**
 	 * Detects Opera Mobile or Opera Mini.
 	 * @return detection of an Opera browser for a mobile device
 	 */
