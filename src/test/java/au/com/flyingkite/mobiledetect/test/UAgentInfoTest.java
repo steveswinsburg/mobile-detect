@@ -41,7 +41,7 @@ import au.com.flyingkite.mobiledetect.UAgentInfo;
 
 /**
  * Some test to check the UAgentInfo class is working as expected.
- * 
+ *
  * @author Steve Swinsvurg (steve.swinsburg@gmail.com)
  *
  */
@@ -59,12 +59,13 @@ public class UAgentInfoTest {
 	private final String ANDROID = "Mozilla/5.0 (Linux; U; Android 1.5; en-gb; HTC Magic Build/CRA71C) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1";
 	private final String PLAYSTATION = "Mozilla/5.0 (PLAYSTATION 3; 3.55);";
 	private final String WII = "Opera/9.30 (Nintendo Wii; U; ; 2071; Wii Shop Channel/1.0; en)";
-	
-	
+	private final String OPERA_MINI_ANDROID = "Opera/9.80 (Android; Opera Mini/7.6.35766/35.4530; U; de) Presto/2.8.119 Version/11.10";
+  private final String BLACKBERRY_Z10 = "Mozilla/5.0 (BB10; Touch) AppleWebKit/537.35+ (KHTML, like Gecko) Version/10.2.0.1791 Mobile Safari/537.35+";
+
 	private final String SAFARI_MAC = "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.57.2 (KHTML, like Gecko) Version/5.1.6 Safari/534.57.2";
 	private final String IE9 = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0;";
 
-	
+
 	/**
 	 * Detect an iPhone
 	 */
@@ -73,7 +74,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPHONE_433, null);
 		Assert.assertEquals(true, agent.detectIphone());
 	}
-	
+
 	/**
 	 * Fail to detect an iPhone by sending Safari
 	 */
@@ -82,7 +83,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(SAFARI_MAC, null);
 		Assert.assertEquals(false, agent.detectIphone());
 	}
-	
+
 	/**
 	 * Detect an iPod
 	 */
@@ -91,7 +92,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPOD_433, null);
 		Assert.assertEquals(true, agent.detectIpod());
 	}
-	
+
 	/**
 	 * Fail to detect an iPod by sending Safari
 	 */
@@ -100,7 +101,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(SAFARI_MAC, null);
 		Assert.assertEquals(false, agent.detectIpod());
 	}
-	
+
 	/**
 	 * Detect an iPad
 	 */
@@ -109,7 +110,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPAD_433, null);
 		Assert.assertEquals(true, agent.detectIpad());
 	}
-	
+
 	/**
 	 * Fail to detect an iPad by sending Safari
 	 */
@@ -118,7 +119,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(SAFARI_MAC, null);
 		Assert.assertEquals(false, agent.detectIpad());
 	}
-	
+
 	/**
 	 * Fail to detect an iPad by sending IE9
 	 */
@@ -127,8 +128,8 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IE9, null);
 		Assert.assertEquals(false, agent.detectIpad());
 	}
-	
-	
+
+
 	/**
 	 * Detect iOS via iPad
 	 */
@@ -137,7 +138,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPAD_433, null);
 		Assert.assertEquals(true, agent.detectIos());
 	}
-	
+
 	/**
 	 * Detect iOS via iPhone
 	 */
@@ -146,7 +147,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPHONE_433, null);
 		Assert.assertEquals(true, agent.detectIos());
 	}
-	
+
 	/**
 	 * Detect iOS via iPod
 	 */
@@ -155,7 +156,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPOD_433, null);
 		Assert.assertEquals(true, agent.detectIos());
 	}
-	
+
 	/**
 	 * Detect iOS and fail because of Safari
 	 */
@@ -164,7 +165,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(SAFARI_MAC, null);
 		Assert.assertEquals(false, agent.detectIos());
 	}
-	
+
 	/**
 	 * Detect iPod or iPhone via iPhone
 	 */
@@ -173,7 +174,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPHONE_433, null);
 		Assert.assertEquals(true, agent.detectIphoneOrIpod());
 	}
-	
+
 	/**
 	 * Detect iPod or iPhone via iPod
 	 */
@@ -182,7 +183,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPOD_433, null);
 		Assert.assertEquals(true, agent.detectIphoneOrIpod());
 	}
-	
+
 	/**
 	 * Detect iPod or iPhone and fail because of Safari
 	 */
@@ -191,7 +192,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(SAFARI_MAC, null);
 		Assert.assertEquals(false, agent.detectIphoneOrIpod());
 	}
-	
+
 
 	/**
 	 * Detect a Playstation
@@ -201,7 +202,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(PLAYSTATION, null);
 		Assert.assertEquals(true, agent.detectSonyPlaystation());
 	}
-	
+
 	/**
 	 * Detect a Wii
 	 */
@@ -210,7 +211,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(WII, null);
 		Assert.assertEquals(true, agent.detectNintendo());
 	}
-	
+
 	/**
 	 * Detect an Android device
 	 */
@@ -219,9 +220,17 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(ANDROID, null);
 		Assert.assertEquals(true, agent.detectAndroid());
 	}
-	
-	
-	
+
+  /**
+   * Detect a BlackBerry.
+   */
+  @Test
+  public void detectBlackBerry() {
+    UAgentInfo agent = new UAgentInfo(BLACKBERRY_Z10, null);
+    Assert.assertEquals(true, agent.detectBlackBerry());
+    Assert.assertEquals(true, agent.detectBlackBerry10Phone());
+  }
+
 	/**
 	 * Test that iPhone is in the iPhone tier
 	 */
@@ -230,7 +239,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPHONE_433, null);
 		Assert.assertEquals(true, agent.getIsTierIphone());
 	}
-	
+
 	/**
 	 * Test that iPad is in the tablet tier
 	 */
@@ -239,7 +248,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPAD_433, null);
 		Assert.assertEquals(true, agent.getIsTierTablet());
 	}
-	
+
 	/**
 	 * Test that a legacy device is in mobile phone group
 	 */
@@ -248,9 +257,25 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(SONY_ERICSSON, null);
 		Assert.assertEquals(true, agent.getIsTierGenericMobile());
 	}
-	
-	
-	
+
+  /**
+   * Test that Opera Mini is treated as a mobile indeed.
+   */
+  @Test
+  public void testOperaMobile() {
+    UAgentInfo agent = new UAgentInfo(OPERA_MINI_ANDROID, null);
+    Assert.assertEquals(true, agent.detectOperaMobile());
+  }
+
+  /**
+   * Test that BlackBerry Z10 is considered a smartphone.
+   */
+  @Test
+  public void testBlackBerryIsSmartphone() {
+    UAgentInfo agent = new UAgentInfo(BLACKBERRY_Z10, null);
+    Assert.assertEquals(true, agent.detectSmartphone());
+  }
+
 	/**
 	 * Test that an iPhone is in the quick test
 	 */
@@ -259,7 +284,7 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPHONE_433, null);
 		Assert.assertEquals(true, agent.detectMobileQuick());
 	}
-	
+
 	/**
 	 * Test that an iPod is in the quick test
 	 */
@@ -268,9 +293,4 @@ public class UAgentInfoTest {
 		UAgentInfo agent = new UAgentInfo(IOS_IPOD_433, null);
 		Assert.assertEquals(true, agent.detectMobileQuick());
 	}
-	
-	
-	
-	
-
 }
