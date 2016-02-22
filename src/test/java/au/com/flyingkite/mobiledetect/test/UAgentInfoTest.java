@@ -50,17 +50,17 @@ public class UAgentInfoTest {
 	private final String IOS_IPHONE_433 = "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5";
 	private final String IOS_IPOD_433 = "Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5";
 	private final String IOS_IPAD_433 = "Mozilla/5.0 (iPad; U; CPU OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5";
-	private final String SYMBIAN = "Mozilla/5.0 (SymbianOS/9.1; U; en-us) AppleWebKit/413 (KHTML, like Gecko) Safari/413";
-	private final String S60 = "Mozilla/5.0 (SymbianOS/9.2; Series60/3.1 NokiaN95/21.0.004; Profile/MIDP-2.0 Configuration/CLDC-1.1 U; ) AppleWebKit/413 (KHTML, like Gecko) Safari/413";
+	//private final String SYMBIAN = "Mozilla/5.0 (SymbianOS/9.1; U; en-us) AppleWebKit/413 (KHTML, like Gecko) Safari/413";
+	//private final String S60 = "Mozilla/5.0 (SymbianOS/9.2; Series60/3.1 NokiaN95/21.0.004; Profile/MIDP-2.0 Configuration/CLDC-1.1 U; ) AppleWebKit/413 (KHTML, like Gecko) Safari/413";
 	private final String SONY_ERICSSON = "SonyEricssonK750i/R1CA Browser/SEMC-Browser/4.2 Profile/MIDP-2.0 Configuration/CLDC-1.1";
-	private final String NETFRONT = "SonyEricssonK310iv/R4DA Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1";
-	private final String SAMSUNG_SGH_X820 = "SEC-SGHX820/1.0 NetFront/3.2 Profile/MIDP-2.0 Configuration/CLDC-1.1";
-	private final String SAMSUNG_SGH_X210 = "SEC-SGHX210/1.0";
+	//private final String NETFRONT = "SonyEricssonK310iv/R4DA Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1";
+	//private final String SAMSUNG_SGH_X820 = "SEC-SGHX820/1.0 NetFront/3.2 Profile/MIDP-2.0 Configuration/CLDC-1.1";
+	//private final String SAMSUNG_SGH_X210 = "SEC-SGHX210/1.0";
 	private final String ANDROID = "Mozilla/5.0 (Linux; U; Android 1.5; en-gb; HTC Magic Build/CRA71C) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1";
 	private final String PLAYSTATION = "Mozilla/5.0 (PLAYSTATION 3; 3.55);";
 	private final String WII = "Opera/9.30 (Nintendo Wii; U; ; 2071; Wii Shop Channel/1.0; en)";
 	private final String OPERA_MINI_ANDROID = "Opera/9.80 (Android; Opera Mini/7.6.35766/35.4530; U; de) Presto/2.8.119 Version/11.10";
-  private final String BLACKBERRY_Z10 = "Mozilla/5.0 (BB10; Touch) AppleWebKit/537.35+ (KHTML, like Gecko) Version/10.2.0.1791 Mobile Safari/537.35+";
+    private final String BLACKBERRY_Z10 = "Mozilla/5.0 (BB10; Touch) AppleWebKit/537.35+ (KHTML, like Gecko) Version/10.2.0.1791 Mobile Safari/537.35+";
 
 	private final String SAFARI_MAC = "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.57.2 (KHTML, like Gecko) Version/5.1.6 Safari/534.57.2";
 	private final String IE9 = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0;";
